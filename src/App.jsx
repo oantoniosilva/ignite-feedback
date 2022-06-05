@@ -18,6 +18,10 @@ export function App() {
             author='Antonio Silva'
             content='Lorem ipsum dolor sit amet'
           />
+          <Post
+            author='Antonio Silva'
+            content='Lorem ipsum dolor sit amet'
+          />
         </main>
       </div>
     </div>
