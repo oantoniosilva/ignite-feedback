@@ -5,6 +5,7 @@ import { Post } from './components/Post';
 import './global.css';
 
 import styles from './App.module.css';
+import { parseWithOptions } from 'date-fns/fp';
 
 const posts = [
   {
@@ -37,7 +38,7 @@ const posts = [
   },
 ]
 
-export function App() {
+export function App(props) {
   return (
     <div>
       <Header />
@@ -47,7 +48,8 @@ export function App() {
         <main>
           {posts.map(post => {
             return (
-              <Post 
+              <Post
+                key={post.id}
                 author={post.author}
                 content={post.content}
                 publishedAt={post.publishedAt}
