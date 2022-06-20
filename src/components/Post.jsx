@@ -39,8 +39,12 @@ export function Post({ author, publishedAt, content }) {
     event.target.setCustomValidity('Esse campo é obrigatório!');
   }
   
-  function deleteComment(comment) {
-    console.log(`Deletar comentário ${comment}`);
+  function deleteComment(commentToDelete) {
+    const commentsWithoutDeleteOne = comments.filter(comment => {
+      return comment !== commentToDelete;
+    });
+
+    setComments(commentsWithoutDeleteOne);
   }
 
   const isNewCommentEmpty = newCommentText.length === 0;
